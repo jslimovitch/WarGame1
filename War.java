@@ -19,6 +19,7 @@ public class War
    public int compareValue, compareValueT;
    public int rank1=1;
    public int rank2=0;
+   public String empty="No";
          
    /**
       No-arg Constructor: creates two new piles, setting them to myPile1, myPile2 respectively
@@ -52,22 +53,23 @@ public class War
       //Check to make sure piles aren't empty
       if (myPile1.isEmpty()||myPile2.isEmpty())
       {
-         System.out.println("ERROR: Someone's deck is empty");
+         //System.out.println("ERROR: Someone's deck is empty");
+         empty="Yes";
       }
       //If piles aren't empty
       else
       {
          //Shuffle piles to ensure true randomness
-         myPile1.shuffle();
-         myPile2.shuffle();
-         
+         // myPile1.shuffle();
+//          myPile2.shuffle();
+//          
          //Deal next Card
          Pile1Card=myPile1.dealNextCard();
          Pile2Card=myPile2.dealNextCard();    
          
          //Print out cards
-         System.out.println(Pile1Card.toString());
-         System.out.println(Pile2Card.toString());
+         //System.out.println(Pile1Card.toString());
+         //System.out.println(Pile2Card.toString());
          
       }
       
@@ -120,7 +122,7 @@ public class War
          {
             myPile1.addCard(Pile1Card);
             myPile1.addCard(Pile2Card);
-            System.out.println("User 1 won!");
+            //System.out.println("User 1 won!");
             compareValue=1;
             
          }
@@ -129,7 +131,7 @@ public class War
          {
             myPile2.addCard(Pile1Card);
             myPile2.addCard(Pile2Card);
-            System.out.println("User 2 won!");
+            //System.out.println("User 2 won!");
             compareValue=2;
          }
          
@@ -196,9 +198,9 @@ public class War
          Card Pile2Card1=myPile2.dealNextCard();
          
          Card Pile1Card2=myPile1.dealNextCard();
-         System.out.println(Pile1Card2.toString());
+         //System.out.println(Pile1Card2.toString());
          Card Pile2Card2=myPile2.dealNextCard();
-         System.out.println(Pile2Card2.toString());
+         //System.out.println(Pile2Card2.toString());
          
          compare(Pile1Card2, Pile2Card2);
       
@@ -234,71 +236,7 @@ public class War
          
             
    }
-   // 
-//    public static void main(String[] args)
-//    {
-//             
-//       Deck myDeck=new Deck();
-//       myDeck.randomDeal();
-//       Pile hand1=new Pile(myDeck.getList1());
-//       Pile hand2=new Pile(myDeck.getList2());
-//       hand1.shuffle();
-//       hand2.shuffle();
-//       War myWar=new War(hand1,hand2);
-//       
-//       Scanner keyboard=new Scanner(System.in);
-//       String runner="y";
-//       int round=1;
-//             
-//       WarGUI frame = new WarGUI();
-//       
-//       while (runner.equals("y") && hand1.myPile.size()!=0 && hand2.myPile.size()!=0)
-//       {
-//          frame.revalidate();
-//          myWar.flip();
-//          Card userCard=myWar.returnUserCard();
-//          frame.FlipPanelUser(userCard.toString());
-//          Card computerCard=myWar.returnComputerCard();
-//          frame.FlipPanelComputer(computerCard.toString());
-//             
-//          myWar.compare();
-//          
-//          //returnCompareValue();
-//          frame.userTotal(hand1.myPile.size());
-//          frame.computerTotal(hand2.myPile.size());
-//          frame.bottom(myWar.compareValue,round);
-//          System.out.println("Round Number: "+round);
-//          round++;
-//          runner="n";
-//          System.out.println("\nWould you like to flip again? (Enter y/n)");
-//          runner=keyboard.nextLine(); 
-// //             
-//                   // if(frame.getRunner()=="y")
-// //          {
-// //             runner="y";
-// //          }
-//                
-//       }
-//       
-//       // int i=1;
-// //       while(i<2)
-// //       {
-// //          if(frame.getRunner()=="y")
-// //          {
-// //             runner="y";
-// //          }
-// //          
-// //       }
-//       
-//  
-//       if (hand1.myPile.size()==0)
-//          System.out.println("USER 2 WON THE GAME!");
-//       else if (hand2.myPile.size()==0)
-//          System.out.println("USER 1 WON THE GAME!");
-//       
-//       
-//       
-//    }
+  
    
  
 
